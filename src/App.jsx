@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 
 import "./App.css";
+import ContactSupport from "./pages/ContactSupport";
 
 /* =========================================
    NAVIGATION
@@ -3545,16 +3546,10 @@ const filteredBookings = useMemo(() => {
             Our support team is here to help you.
           </p>
 
-          <button
-            onClick={() =>
-              window.alert("Please contact your resort administrator.")
-            }
-          >
+          <button onClick={() => navigate("Contact Support")}>
             Contact support <ArrowRight size={14} />
-          </button>
-
-        </div>
-
+            </button>
+          </div>
         <div className="sidebar-profile">
 
           <div className="profile-avatar">AD</div>
@@ -4057,7 +4052,9 @@ const filteredBookings = useMemo(() => {
           <PaymentsPage />
         ) : activePage === "Services" ? (
         <ServicesPage />
-        ): (
+      ) : activePage === "Contact Support" ? (
+      <ContactSupport />
+    ) : (
           <div className="module-placeholder">
 
             <div className="placeholder-icon">
